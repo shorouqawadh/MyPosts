@@ -11,3 +11,9 @@ struct Post: Decodable {
     let day: String
     let body: String
 }
+
+struct PostModel: Codable, Identifiable {
+    var id = UUID()
+    let day: String
+    let body: String
+}

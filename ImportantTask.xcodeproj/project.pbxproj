@@ -12,7 +12,6 @@
 		000E0C7128C4EA3E009D0B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000E0C7028C4EA3E009D0B9E /* Assets.xcassets */; };
 		000E0C7428C4EA3E009D0B9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000E0C7328C4EA3E009D0B9E /* Preview Assets.xcassets */; };
 		000E0C8028C54EAF009D0B9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C7F28C54EAF009D0B9E /* LoginView.swift */; };
-		000E0C8328C54FA0009D0B9E /* LoginNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8228C54FA0009D0B9E /* LoginNetworkLayer.swift */; };
 		000E0C8528C54FCC009D0B9E /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8428C54FCC009D0B9E /* PostModel.swift */; };
 		000E0C8728C55323009D0B9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8628C55323009D0B9E /* LoginViewModel.swift */; };
 		000E0C8B28C557BF009D0B9E /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8A28C557BF009D0B9E /* PostsViewModel.swift */; };
@@ -26,7 +25,6 @@
 		000E0C7028C4EA3E009D0B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		000E0C7328C4EA3E009D0B9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		000E0C7F28C54EAF009D0B9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		000E0C8228C54FA0009D0B9E /* LoginNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkLayer.swift; sourceTree = "<group>"; };
 		000E0C8428C54FCC009D0B9E /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		000E0C8628C55323009D0B9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		000E0C8A28C557BF009D0B9E /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		000E0C8128C54F52009D0B9E /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
-				000E0C8228C54FA0009D0B9E /* LoginNetworkLayer.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -191,7 +188,6 @@
 				000E0C8528C54FCC009D0B9E /* PostModel.swift in Sources */,
 				000E0C6D28C4EA3C009D0B9E /* ImportantTaskApp.swift in Sources */,
 				000E0C8028C54EAF009D0B9E /* LoginView.swift in Sources */,
-				000E0C8328C54FA0009D0B9E /* LoginNetworkLayer.swift in Sources */,
 				000E0C8B28C557BF009D0B9E /* PostsViewModel.swift in Sources */,
 				000E0C8D28C5764E009D0B9E /* UserModel.swift in Sources */,
 				000E0C8728C55323009D0B9E /* LoginViewModel.swift in Sources */,

@@ -41,7 +41,7 @@ struct LoginView: View {
                 Spacer()
                 if loginViewModel.isAuthenticated && postViewModel.posts.count > 0 {
                     List{
-                        ForEach(postViewModel.posts, id: \.id){ post in
+                        ForEach(postViewModel.posts2, id: \.id){ post in
                         VStack(alignment: .leading) {
                             Text("\(post.day)")
                                 .font(.title3)
@@ -61,7 +61,7 @@ struct LoginView: View {
                 }
                 
                 Button("See my posts") {
-                    postViewModel.getPosts()
+                    postViewModel.getPosts2()
                 }
                 .padding()
                 .background(Color.blue)
