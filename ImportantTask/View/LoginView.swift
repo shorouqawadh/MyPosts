@@ -6,72 +6,60 @@
 //
 
 import SwiftUI
+import Combine
 
 struct LoginView: View {
     
-    @StateObject private var loginViewModel = LoginViewModel()
-    @StateObject private var postViewModel = PostsViewModel()
-    @State var showWelcomeView = false
-
+    @StateObject var loginViewModel = LoginViewModel()
+    @StateObject var postViewModel = PostsViewModel()
+    @State var isLoading = false
+    
     var body: some View {
         NavigationView{
+          ZStack {
             VStack{
-                TextField("Username", text: $loginViewModel.username)
-                    .padding()
-                    .frame( height: UIScreen.main.bounds.height * 0.07)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(12)
-                
-                SecureField("Password", text: $loginViewModel.password)
-                    .padding()
-                    .frame( height: UIScreen.main.bounds.height * 0.07)
-                    .background(Color(UIColor.systemGray6))
-                    .cornerRadius(12)
-                Button {
+              Form{
+                    Section(header: Text("ENTER YOUR INFORMATION"),
+                            footer: Text(loginViewModel.errorText).foregroundColor(.red)){
+                     TextField("Username", text: $loginViewModel.username)
+                     SecureField("Password", text: $loginViewModel.password)
+                }
+              }
+             Button {
+                 loginViewModel.isLoading = true
                     loginViewModel.login()
-                } label: {
-                    Text("Login")
-                        .frame( width: UIScreen.main.bounds.width * 0.9,
-                                height:  UIScreen.main.bounds.height * 0.07)
-                        .background(Color(UIColor.systemBlue))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .padding(.top)
+             } label: {
+                    RoundedRectangle(cornerRadius: 12)
+                    .frame( width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 0.07)
+                    .overlay( Text("Login").foregroundColor(.white))
+             }
+             .disabled(loginViewModel.isValid)
+             NavigationLink("", destination:  PostsView(isLoading: $isLoading), isActive: $loginViewModel.isAuthenticated)
+               }
+              
+              // MARK: Login alert
+            .alert(Text("Login Faild"), isPresented: $loginViewModel.isAlert, actions: {
+                Button("OK", role: .cancel) {
+                    loginViewModel.isAlert  = false
                 }
-                Spacer()
-                if loginViewModel.isAuthenticated && postViewModel.posts.count > 0 {
-                    List{
-                        ForEach(postViewModel.posts2, id: \.id){ post in
-                        VStack(alignment: .leading) {
-                            Text("\(post.day)")
-                                .font(.title3)
-                                .bold()
-                            Text("\(post.body)")
-                                .fontWeight(.light)
-                                .foregroundColor(.gray)
-                        }
-                        .frame(height: UIScreen.main.bounds.height * 0.1)
-                        .cornerRadius(12)
-                        .padding()
-                            
-                        }
-                    } .listStyle(SidebarListStyle()) .listRowBackground(Color.red)
-                } else {
-                    Text("Login to see your posts!")
-                }
-                
-                Button("See my posts") {
-                    postViewModel.getPosts2()
-                }
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
+
+            }, message: {
+                Text("Username or password is incorrect")
+            })
+
+              .navigationTitle("Login")
+              if loginViewModel.isLoading{
+                  LoadingView()
             }
-            .padding()
-            .padding(.top)
-            .navigationTitle("Login")
+          }
         }
+        .onAppear {
+            print("\(loginViewModel.isAuthenticated)🙏🏽")
+        }
+        
+      
+       
+        
     }
 }
 
@@ -83,3 +71,13 @@ struct LoginView_Previews: PreviewProvider {
 
 
 
+
+struct LoadingView: View {
+    var body: some View {
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: Color(UIColor.systemBlue)))
+            .scaleEffect(2)
+            .frame(width: 100, height: 100)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))
+    }
+}

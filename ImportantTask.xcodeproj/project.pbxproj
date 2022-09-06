@@ -16,6 +16,8 @@
 		000E0C8728C55323009D0B9E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8628C55323009D0B9E /* LoginViewModel.swift */; };
 		000E0C8B28C557BF009D0B9E /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8A28C557BF009D0B9E /* PostsViewModel.swift */; };
 		000E0C8D28C5764E009D0B9E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0C8C28C5764E009D0B9E /* UserModel.swift */; };
+		000E0CA928C6044F009D0B9E /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0CA828C6044F009D0B9E /* PostsView.swift */; };
+		000E0CAD28C72A90009D0B9E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E0CAC28C72A90009D0B9E /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		000E0C8628C55323009D0B9E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		000E0C8A28C557BF009D0B9E /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		000E0C8C28C5764E009D0B9E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		000E0CA828C6044F009D0B9E /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		000E0CAC28C72A90009D0B9E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				000E0C7F28C54EAF009D0B9E /* LoginView.swift */,
+				000E0CA828C6044F009D0B9E /* PostsView.swift */,
+				000E0CAC28C72A90009D0B9E /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,9 +193,11 @@
 				000E0C6F28C4EA3C009D0B9E /* ContentView.swift in Sources */,
 				000E0C8528C54FCC009D0B9E /* PostModel.swift in Sources */,
 				000E0C6D28C4EA3C009D0B9E /* ImportantTaskApp.swift in Sources */,
+				000E0CAD28C72A90009D0B9E /* MainView.swift in Sources */,
 				000E0C8028C54EAF009D0B9E /* LoginView.swift in Sources */,
 				000E0C8B28C557BF009D0B9E /* PostsViewModel.swift in Sources */,
 				000E0C8D28C5764E009D0B9E /* UserModel.swift in Sources */,
+				000E0CA928C6044F009D0B9E /* PostsView.swift in Sources */,
 				000E0C8728C55323009D0B9E /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
